@@ -51,58 +51,6 @@ aqi-predictor-sukkur/
 
 ---
 
-## ⚡ Installation & Usage
-
-1. **Clone the repository:**
-	```bash
-	git clone https://github.com/your-username/aqi-predictor-sukkur.git
-	cd aqi-predictor-sukkur
-	```
-2. **Install dependencies:**
-	```bash
-	pip install -r requirements.txt
-	```
-3. **Set up your API key:**
-	- Copy `.env.example` to `.env` (or create `.env`)
-	- Add your AQICN API key (see below)
-4. **Fetch AQI data:**
-	```bash
-	python 1_fetch_data.py
-	```
-5. **Train models:**
-	```bash
-	python 2_train_models.py
-	```
-6. **Run the dashboard:**
-	```bash
-	streamlit run 3_dashboard.py
-	```
-
----
-
-## 🔑 API Key Setup
-1. Get your API key from [AQICN API](https://aqicn.org/data-platform/token/#/).
-2. Create a `.env` file in the project root:
-	```env
-	AQICN_API_KEY=your_api_key_here
-	CITY=sukkur
-	```
-3. **Never commit your API key to the repository!**
-
----
-
-## 🤖 GitHub Actions Automation
-- **fetch_data.yml:** Fetches new AQI data every hour, commits to `data/`.
-- **train_models.yml:** Retrains models daily at midnight, commits to `models/` and `data/model_comparison.csv`.
-- **Secrets:** API key is securely stored as a GitHub Actions secret (`AQICN_API_KEY`).
-- **Manual triggers:** Both workflows can also be run manually from the Actions tab.
-
----
-
-## 📊 Dashboard Screenshots
-> _Add screenshots of your dashboard here!_
-
----
 
 ## 🏆 Model Comparison Results
 | Model            | RMSE   | MAE    | R²    |
